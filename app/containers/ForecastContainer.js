@@ -28,7 +28,7 @@ var ForecastContainer = React.createClass({
 	},
 	handleDayClick: function(dayInfo) {
 		this.context.router.push({
-      pathname: '/detail/' + this.props.routeParams.city,
+      pathname: '/detail/:city' + this.props.routeParams.city,
       state: {
         dayStats: dayInfo
       }

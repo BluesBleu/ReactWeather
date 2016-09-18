@@ -21,18 +21,18 @@ var styles = {
   }
 }
 
-function DayItem (props) {
+function SingleDay (props) {
   var date = getDate(props.day.dt);
   var icon = props.day.weather[0].icon;
   return (
-    <div style={styles.dayContainer} onClick={props.handleClick}>
+    <div style={styles.dayContainer} onClick={props.onDayClick}>
       <img style={styles.weather} src={'./app/images/weather-icons/' + icon + '.svg'} alt='Weather' />
       <h2 style={styles.subheader}>{date}</h2>
     </div>
   )
 }
 
-DayItem.propTypes = {
+SingleDay.propTypes = {
   day: PropTypes.shape({
     dt: PropTypes.number.isRequired,
     weather: PropTypes.array.isRequired,
@@ -40,4 +40,4 @@ DayItem.propTypes = {
   onDayClick: PropTypes.func,
 }
 
-module.exports = DayItem;
+module.exports = SingleDay;

@@ -1,13 +1,17 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
+var divStyle = {
+  color: 'white',
+  fontSize: '50px'
+}
 function Navbar (props) {
   return (
     <div>
-    	<nav className="navbar navbar-inverse">
+    	<nav style={{background: '#FF8000'}} className="navbar">
     		<div className="container-fluid">
     			<div className="navbar-header">
-    				<h1 className="navbar-brand">React Weather</h1>
+    				<h1 style={divStyle} className="navbar-brand">React Weather</h1>
     			</div>
     			<ul className="navbar-form navbar-right">
     				<form onSubmit={props.onSubmitCity}>
@@ -20,7 +24,7 @@ function Navbar (props) {
   								onChange={props.onUpdateCity}>
   							</input>
 							</div>
-							<button type="submit" className="btn btn-success"> Get Weather</button>
+							<button style={{margin:17}} type="submit" className="btn btn-success"> Get Weather</button>
 						</form>
     			</ul>
     		</div>

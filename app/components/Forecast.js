@@ -2,7 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
-var DayItem = require('../components/DayItem');
+var SingleDay = require('../components/SingleDay');
 
 function CastUI (props) {
   return (
@@ -11,7 +11,7 @@ function CastUI (props) {
       <p style={styles.subheader}>Select a day</p>
       <div style={styles.container}>
         {props.weatherDays.map(function (listItem) {
-          return <DayItem key={listItem.dt} day={listItem} onDayClick={props.onDayClick.bind(null, listItem)} />
+          return <SingleDay key={listItem.dt} day={listItem} onDayClick={props.onDayClick.bind(null, listItem)} />
         })}
       </div>
     </div>
