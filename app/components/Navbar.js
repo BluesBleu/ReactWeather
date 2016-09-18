@@ -5,15 +5,20 @@ var divStyle = {
   color: 'white',
   fontSize: '50px'
 }
+
+//navbar component that all pages will have
 function Navbar (props) {
   return (
     <div>
     	<nav style={{background: '#FF8000'}} className="navbar">
-    		<div className="container-fluid">
-    			<div className="navbar-header">
+    		
+        <div className="container-fluid">
+    			
+          <div className="navbar-header">
     				<h1 style={divStyle} className="navbar-brand">React Weather</h1>
     			</div>
-    			<ul className="navbar-form navbar-right">
+    			
+          <ul className="navbar-form navbar-right">
     				<form onSubmit={props.onSubmitCity}>
     					<div className="form-group">
   							<input 
@@ -24,9 +29,12 @@ function Navbar (props) {
   								onChange={props.onUpdateCity}>
   							</input>
 							</div>
+
 							<button style={{margin:17}} type="submit" className="btn btn-success"> Get Weather</button>
-						</form>
-    			</ul>
+						
+            </form>
+    			
+          </ul>
     		</div>
     	</nav>
     </div>

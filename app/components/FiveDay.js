@@ -21,7 +21,9 @@ var styles = {
   }
 }
 
-function SingleDay (props) {
+//component to build the 5 day forecastcontainer
+function FiveDay (props) {
+
   var date = getDate(props.day.dt);
   var icon = props.day.weather[0].icon;
   return (
@@ -32,12 +34,15 @@ function SingleDay (props) {
   )
 }
 
-SingleDay.propTypes = {
+
+FiveDay.propTypes = {
+  //single day to build component
   day: PropTypes.shape({
     dt: PropTypes.number.isRequired,
     weather: PropTypes.array.isRequired,
   }).isRequired,
+  //function when a day is clicked
   onDayClick: PropTypes.func,
 }
 
-module.exports = SingleDay;
+module.exports = FiveDay;

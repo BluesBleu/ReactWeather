@@ -1,3 +1,4 @@
+//mapping numbers to days of the week
 var daysMap = {
   "0":"Sunday",
   "1":"Monday",
@@ -8,6 +9,7 @@ var daysMap = {
   "6":"Saturday"
 };
 
+//mapping numbers to months
 var monthsMap = {
   "0":"Jan",
   "1":"Feb",
@@ -23,6 +25,7 @@ var monthsMap = {
   "11":"Dec"
 };
 
+//calculate date in nice string form
 function getDate (unixTimestmap) {
   var date = new Date(unixTimestmap * 1000);
   var day = daysMap[date.getDay()]

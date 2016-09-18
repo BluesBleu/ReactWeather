@@ -1,11 +1,18 @@
 var React = require('react');
-var Navbar = require('../components/NavBar');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
+
+//components
+var Navbar = require('../components/Navbar');
 var Forecast = require('../components/Forecast');
 var weatherHelper = require('../utils/weatherHelper');
 var Navbar = require('../components/Navbar');
 var UpdateFunctions = require('../components/UpdateFunctions');
 
+//Forecast Container that shows 5 day forecast
 var ForecastContainer = React.createClass({
+
+	//need for new search, passes data to new route
 	contextTypes: {
 		router: React.PropTypes.object.isRequired
 	},
@@ -16,8 +23,9 @@ var ForecastContainer = React.createClass({
 			city: ''
 		}
 	},
+
+	//grabs 5 day forecast from API, sets proper states
 	componentDidMount: function () {
-		console.log("running once");
 	  weatherHelper.getWeatherArray(this.props.location.query.city)
 	    .then(function (data) {
 	    	this.setState({
@@ -26,17 +34,23 @@ var ForecastContainer = React.createClass({
 	    	})
 	    }.bind(this))
 	},
+
+	//event where a specific day is clicked, pass state into new route
 	handleDayClick: function(dayInfo) {
+		var setCity = this.props.location.query.city;
 		this.context.router.push({
-      pathname: '/detail/:city' + this.props.routeParams.city,
+      pathname: '/detail/:city',
       state: {
-        dayStats: dayInfo
+        dayStats: dayInfo,
+        city: setCity
       }
     })
 	},
 	render: function () {
 		return (
+
 			<div>	
+
 				<Navbar
 					onSubmitCity={UpdateFunctions.handleSubmitCity.bind(this)}
 					onUpdateCity={UpdateFunctions.handleUpdateCity.bind(this)}
@@ -48,6 +62,7 @@ var ForecastContainer = React.createClass({
 					onDayClick={this.handleDayClick}
 					city={this.state.city}
 				/>
+				
 			</div>
 		)
 	}

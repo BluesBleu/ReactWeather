@@ -2,8 +2,9 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
-var SingleDay = require('../components/SingleDay');
+var FiveDay = require('../components/FiveDay');
 
+//build the 5 day forecast UI
 function CastUI (props) {
   return (
 		<div style={{textAlign: 'center'}}>
@@ -11,13 +12,14 @@ function CastUI (props) {
       <p style={styles.subheader}>Select a day</p>
       <div style={styles.container}>
         {props.weatherDays.map(function (listItem) {
-          return <SingleDay key={listItem.dt} day={listItem} onDayClick={props.onDayClick.bind(null, listItem)} />
+          return <FiveDay key={listItem.dt} day={listItem} onDayClick={props.onDayClick.bind(null, listItem)} />
         })}
       </div>
     </div>
   )
 }
 
+//component that Forecast will call to build in one shot
 function Forecast (props) {
 	return (
 		<div>
@@ -25,11 +27,13 @@ function Forecast (props) {
 				props.isLoading === true
 				? <h1 style={styles.header}> Just a moment </h1>
 				: 
+
 			<CastUI
 				city={props.city}
 				weatherDays={props.weatherDays}
 				onDayClick={props.onDayClick} />
 			}
+      
 		</div>
 	)
 }

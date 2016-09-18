@@ -4,12 +4,16 @@ var Link = ReactRouter.Link;
 var Navbar = require('./Navbar')
 var PropTypes = React.PropTypes;
 
+//Home component to be called from homeContainer
 function Home (props) {
 	return (
 		<div style={divStyle}>
+
 			<h1 style={h1Style}> Enter a City and State </h1>
+
 			<form onSubmit={props.onSubmitCity}>
     		<div className="form-group">
+  				
   				<input 
   					type="text" 
   					className="input-sm"
@@ -17,8 +21,11 @@ function Home (props) {
   					value={props.city}
   					onChange={props.onUpdateCity} >
   				</input>
+
 				</div>
+				
 				<button type="submit" className="btn btn-success"> Get Weather</button>
+			
 			</form>
 		</div>
 	)
