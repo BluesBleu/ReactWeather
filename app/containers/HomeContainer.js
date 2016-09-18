@@ -1,6 +1,7 @@
 var React = require('react');
 var Home = require('../components/Home');
 var Navbar = require('../components/Navbar');
+var UpdateFunctions = require('../components/UpdateFunctions');
 
 var HomeContainer = React.createClass({
 	contextTypes: {
@@ -11,25 +12,16 @@ var HomeContainer = React.createClass({
 			city: ''
 		}
 	},
-	handleSubmitCity: function (e) {
-		e.preventDefault();
-		this.context.router.push('/forecast/' + this.state.city);
-	},
-	handleUpdateCity: function (event) {
-		this.setState({
-			city: event.target.value
-		});
-	},
 	render: function() {
 		return (
 			<div>
 				<Navbar
-					onSubmitCity={this.handleSubmitCity}
-					onUpdateCity={this.handleUpdateCity}
+					onSubmitCity={UpdateFunctions.handleSubmitCity.bind(this)}
+					onUpdateCity={UpdateFunctions.handleUpdateCity.bind(this)}
 					city={this.state.city} />
 				<Home 
-					onSubmitCity={this.handleSubmitCity}
-					onUpdateCity={this.handleUpdateCity}
+					onSubmitCity={UpdateFunctions.handleSubmitCity.bind(this)}
+					onUpdateCity={UpdateFunctions.handleUpdateCity.bind(this)}
 					city={this.state.city} />
 			</div>
 		)
