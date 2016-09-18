@@ -6,22 +6,34 @@ var PropTypes = React.PropTypes;
 
 function Home (props) {
 	return (
-		<div>
-			<h1> Enter a City and State </h1>
+		<div style={divStyle}>
+			<h1 style={h1Style}> Enter a City and State </h1>
 			<form onSubmit={props.onSubmitCity}>
     		<div className="form-group">
   				<input 
   					type="text" 
-  					className="form-control"
+  					className="input-sm"
   					placeholder='San Francisco, California'
   					value={props.city}
-  					onChange={props.onUpdateCity}>
+  					onChange={props.onUpdateCity} >
   				</input>
 				</div>
 				<button type="submit" className="btn btn-success"> Get Weather</button>
 			</form>
 		</div>
 	)
+}
+
+var divStyle = {
+	padding: '400px',
+	textAlign: 'center',
+	verticleAlign: 'middle',
+}
+
+var h1Style = {
+	fontSize: 50,
+  color: 'white',
+  fontWeight: 100
 }
 
 Home.propTypes = {

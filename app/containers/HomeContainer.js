@@ -14,12 +14,12 @@ var HomeContainer = React.createClass({
 	},
 	render: function() {
 		return (
-			<div>
+			<div style={homeStyle}>
 				<Navbar
 					onSubmitCity={UpdateFunctions.handleSubmitCity.bind(this)}
 					onUpdateCity={UpdateFunctions.handleUpdateCity.bind(this)}
 					city={this.state.city} />
-				<Home 
+				<Home
 					onSubmitCity={UpdateFunctions.handleSubmitCity.bind(this)}
 					onUpdateCity={UpdateFunctions.handleUpdateCity.bind(this)}
 					city={this.state.city} />
@@ -27,5 +27,10 @@ var HomeContainer = React.createClass({
 		)
 	}
 });
+
+var homeStyle = {
+	backgroundImage: "url('app/images/pattern.svg')",
+  backgroundSize: 'cover'
+};
 
 module.exports = HomeContainer;
