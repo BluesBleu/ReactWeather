@@ -15,4 +15,5 @@ Enter a city in the navigation bar, or in the main page. Click which of the 5 da
 ## Demo Pictures
 ![alt tag](https://raw.githubusercontent.com/DanielCPLau/ReactWeather/master/DemoPics/Screen%20Shot%202017-01-06%20at%209.36.20%20PM.png)
 ![alt tag](https://raw.githubusercontent.com/DanielCPLau/ReactWeather/master/DemoPics/Screen%20Shot%202017-01-06%20at%209.36.32%20PM.png)
+Specific day's information
 ![alt tag](https://raw.githubusercontent.com/DanielCPLau/ReactWeather/master/DemoPics/Screen%20Shot%202017-01-06%20at%209.36.42%20PM.png)
