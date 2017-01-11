@@ -1,4 +1,4 @@
-# ReactWeather
+# What4Cast
 
 A rather simple React app that allows you to look up the details of a 5 day forecast for a city.
 
