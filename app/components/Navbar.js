@@ -15,7 +15,7 @@ function Navbar (props) {
         <div className="container-fluid">
     			
           <div className="navbar-header">
-    				<h1 style={divStyle} className="navbar-brand">React Weather</h1>
+    				<h1 style={divStyle} className="navbar-brand">What4Cast</h1>
     			</div>
     			
           <ul className="navbar-form navbar-right">
